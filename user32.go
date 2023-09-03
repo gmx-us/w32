@@ -1030,17 +1030,3 @@ func KillTimer(hwnd HWND, nIDEvent uint32) bool {
 	)
 	return ret != 0
 }
-
-// it will panic when the function fails
-func RedrawWindow(hWnd HWND, lpRect *RECT, hrgnUpdate HRGN, flag uint32) {
-	ret, _, _ := procRedrawWindow.Call(
-		uintptr(hWnd),
-		uintptr(unsafe.Pointer(lpRect)),
-		uintptr(hrgnUpdate),
-		uintptr(flag),
-	)
-	if ret!=0{
-		panic("RedrawWindow fail")
-	}
-	return
-}
