@@ -120,7 +120,6 @@ var (
 	procEnumChildWindows              = moduser32.NewProc("EnumChildWindows")
 	procSetTimer                      = moduser32.NewProc("SetTimer")
 	procKillTimer                     = moduser32.NewProc("KillTimer")
-	procRedrawWindow                  = moduser32.NewProc("RedrawWindow")
 )
 
 func RegisterClassEx(wndClassEx *WNDCLASSEX) ATOM {
